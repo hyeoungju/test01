@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.varxyz.test001.service.CustomerServiceImpl;
+import com.varxyz.test001.service.MenuServiceImpl;
 import com.varxyz.test001.dao.CustomerDao;
+import com.varxyz.test001.dao.MenuDao;
 
 
 @Configuration
@@ -36,8 +38,18 @@ public class DataSourceConfig {
 	}
 	
 	@Bean
-	public CustomerDao CustomerDao() {
+	public CustomerDao customerDao() {
 		return new CustomerDao(dataSource());
+	}
+	
+	@Bean
+	public MenuServiceImpl menuService() {
+		return new MenuServiceImpl();
+	}
+	
+	@Bean
+	public MenuDao menuDao() {
+		return new MenuDao(dataSource());
 	}
 	
 }

@@ -14,6 +14,7 @@
 <%}else { %>
 ${userId }님, 환영합니다.
 <button type="button" onclick='location.href="<c:url value='/login/logout'/>"'>로그아웃</button>
+<button type="button" onclick='location.href="<c:url value='/menuItem/add_menu'/>"'>메뉴등록하기</button>
 <%} %>
 </body>
 </html>
