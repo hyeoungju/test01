@@ -22,6 +22,7 @@ public class addMenuController {
 		return "menuItem/add_menu";
 	}
 	
+	
 	@PostMapping("/menuItem/add_menu")
 	public String addMenuForm(MenuCommand menuCommand, Model model) {
 		String menuName = menuCommand.getMenuName();
@@ -43,7 +44,7 @@ public class addMenuController {
 
 		menuService.addMenu(menu);
 		model.addAttribute("menuCommand", menuCommand);
-		return "menuItem/add_menu";
+		return "menuItem/success_addMenu";
 	}
 	
 }

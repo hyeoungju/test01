@@ -14,7 +14,8 @@
 메뉴이름 : <form:input type="text" path="menuName" />
 메뉴가격 : <form:input type="text" path="menuPrice" />
 메뉴종류 : <form:input type="text" path="menuType" />
-<button type="submit" onclick="location.href='<c:url value="menuItem/add_menu"/>'" >메뉴등록</button>
+<button type="submit" onclick="location.href='<c:url value="menuItem/success_addMenu"/>'" >메뉴등록</button>
+<button type="submit" onclick="location.href='<c:url value="/main"/>'" >메인으로</button>
 </form:form>
 </body>
 </html>

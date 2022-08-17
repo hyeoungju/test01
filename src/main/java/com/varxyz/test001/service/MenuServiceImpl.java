@@ -1,5 +1,7 @@
 package com.varxyz.test001.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.varxyz.test001.dao.MenuDao;
@@ -19,6 +21,11 @@ public class MenuServiceImpl implements MenuService{
 	@Override
 	public Menu isMenu(String menuName) {
 		return menuDao.isMenu(menuName);
+	}
+
+	@Override
+	public List<Menu> getMenuItem() {
+		return menuDao.getMenuItem();
 	}
 
 

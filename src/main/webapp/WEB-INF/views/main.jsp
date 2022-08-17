@@ -13,6 +13,19 @@
 <button type="button" onclick='location.href="<c:url value='/join/add_customer'/>"'>회원가입</button>
 <%}else { %>
 ${userId }님, 환영합니다.
+
+<div>
+ <table>
+   <c:forEach var="menuList" items="${menuList}">
+    <tr>
+      <td>${menuList.getMenuName()}</td>
+      <td>${menuList.getMenuPrice()}</td>
+      <td>${menuList.getMenuType()}</td>
+    </tr>
+    </c:forEach>
+ </table>
+</div>
+
 <button type="button" onclick='location.href="<c:url value='/login/logout'/>"'>로그아웃</button>
 <button type="button" onclick='location.href="<c:url value='/menuItem/add_menu'/>"'>메뉴등록하기</button>
 <%} %>

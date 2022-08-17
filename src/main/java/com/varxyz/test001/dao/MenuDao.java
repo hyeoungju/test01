@@ -2,6 +2,7 @@ package com.varxyz.test001.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -60,6 +61,25 @@ public class MenuDao {
 			e.printStackTrace();
 			return 2;
 		}
+	}
+	
+	/**
+	 * 등록된 메뉴리스트 가져오기
+	 * @return
+	 */
+	public List<Menu> getMenuItem(){
+		String sql = "SELECT menuName, menuPrice, menuType FROM Menu";
+		return jdbcTemplate.query(sql, new RowMapper<Menu>() {
+			
+			@Override
+			public Menu mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Menu menu = new Menu();
+				menu.setMenuName(rs.getString("menuName"));
+				menu.setMenuPrice(rs.getInt("menuPrice"));
+				menu.setMenuType(rs.getString("menuType"));
+				return menu;	
+			}
+		});
 	}
 	
 }
